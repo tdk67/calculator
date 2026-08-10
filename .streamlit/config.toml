@@ -1,12 +1,5 @@
 [server]
-headless = false
-runOnSave = true
-enableCORS = false
-enableXsrfProtection = false
+headless = true
 
 [client]
-showSpinner = true
 toolbarMode = "minimal"
-
-[runner]
-fastReruns = true
