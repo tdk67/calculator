@@ -22,6 +22,27 @@ Standard calculators use floating-point numbers, which can lead to representatio
 
 ---
 
+## 🧮 3D Quaternion Calculator
+
+An interactive, educational 3D wireframe cube calculator powered by 4D quaternions ($q = w + xi + yj + zk$) and controlled via calculator keypad inputs.
+
+### 🎯 Key Features
+- **Live 3D Viewport**: Real-time perspective projection of a wireframe cube with RGB coordinate axes (Red: X, Green: Y, Blue: Z).
+- **Calculator Keypad Stepping**: Numpad keys (`7`, `8`, `9`, `4`, `5`, `6`, `1`, `2`, `3`) control pitch, yaw, and roll around X, Y, Z axes.
+- **Scientific Degree Input**: Direct numeric degree keypad (`Rx`, `Ry`, `Rz` + numeric entry) to apply exact angles.
+- **Degrees UI & Internal Radians**: Shows intuitive degrees (°) on the LCD while performing all quaternion math internally in radians.
+- **Educational Quaternion Inspector**: Live metrics and step-by-step breakdowns for unit quaternions ($q_x, q_y, q_z$), Hamilton products ($Q_{\text{final}} = q_z \otimes q_y \otimes q_x$), and 3D vertex transformations ($p' = Q \cdot p \cdot Q^*$).
+
+### 🚀 Usage
+
+Launch the 3D Quaternion Calculator app:
+
+```bash
+streamlit run quaternion_calculator.py
+```
+
+---
+
 ## 🐍 Prerequisites & Python Version
 
 * **Python**: `3.12.x` (tested with Python 3.12)
@@ -59,43 +80,19 @@ Standard calculators use floating-point numbers, which can lead to representatio
 
 ## 🚀 Usage
 
-Launch the Streamlit web app by running:
+Launch the Rational Calculator:
 
 ```bash
 streamlit run streamlit_calculator.py
 ```
 
+Or launch the 3D Quaternion Calculator:
+
+```bash
+streamlit run quaternion_calculator.py
+```
+
 Streamlit will automatically open the web interface in your default browser at `http://localhost:8501`.
-
----
-
-## 🧪 Testing & Edge Cases
-
-When manually testing the application, verify the following scenarios and edge cases:
-
-### 1. Basic Exact Rational Arithmetic
-* **Test Input**: `1 / 3 + 1 / 6 =`
-* **Expected Result**: `1/2` (demonstrates fraction simplification).
-
-### 2. Operator Precedence
-* **Test Input**: `2 + 3 * 4 =`
-* **Expected Result**: `14` (multiplication evaluates before addition, rather than naive left-to-right evaluation `20`).
-
-### 3. Division by Zero Handling
-* **Test Input**: `5 / 0 =`
-* **Expected Result**: Graceful error message displayed (`Division by zero is not allowed`) without crashing the Streamlit app.
-
-### 4. Integer Simplification
-* **Test Input**: `8 / 2 =`
-* **Expected Result**: `4` (simplifies `4/1` to integer `4`).
-
-### 5. Clear Button (`C`)
-* **Test Input**: Enter `7 + 8`, then press `C`.
-* **Expected Result**: Display resets to `0`, clears session state and previous error/result messages.
-
-### 6. New Input After Evaluation
-* **Test Input**: Evaluate `4 + 5 =` (`9`), then immediately press `2`.
-* **Expected Result**: Display changes to `2` (starts a new expression) instead of `92`.
 
 ---
 
@@ -107,5 +104,8 @@ calculator/
 ├── .python-version          # Specified Python version (3.12.9)
 ├── README.md                # Project documentation
 ├── requirements.txt         # Python package dependencies
-└── streamlit_calculator.py  # Main Streamlit calculator application
+├── streamlit_calculator.py  # Rational number calculator app
+├── quaternion_calculator.py # 3D Quaternion calculator web app
+
 ```
+
